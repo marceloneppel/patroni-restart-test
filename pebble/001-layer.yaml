@@ -1,13 +1,5 @@
 services:
-  patroni:
+  app:
     override: replace
-    command: /usr/bin/python3 /usr/local/bin/patroni /home/postgres/patroni.yml
+    command: /usr/bin/python3 /home/app/script.py
     startup: enabled
-    user: postgres
-    on-check-failure:
-      patroni: restart
-checks:
-  patroni:
-    override: replace
-    http:
-      url: http://127.0.0.1:8008/health
