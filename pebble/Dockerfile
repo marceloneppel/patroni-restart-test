@@ -12,4 +12,5 @@ COPY --from=0 /pebble/pebble /usr/bin/pebble
 RUN mkdir /home/postgres/pebble
 ENV PEBBLE /home/postgres/pebble
 COPY 001-layer.yaml /home/postgres/pebble/layers/001-layer.yaml
+ENV PEBBLE_DEBUG 1
 ENTRYPOINT ["/usr/bin/pebble", "run"]
