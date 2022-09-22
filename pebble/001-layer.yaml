@@ -1,5 +1,5 @@
 services:
   app:
     override: replace
-    command: /usr/bin/python3 /home/app/script.py
+    command: /usr/bin/python3 /home/app/script1.py
     startup: enabled
