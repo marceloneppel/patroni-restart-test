@@ -14,5 +14,6 @@ ENV PEBBLE /home/app/pebble
 COPY 001-layer.yaml /home/app/pebble/layers/001-layer.yaml
 COPY script1.py /home/app/script1.py
 COPY script2.py /home/app/script2.py
+COPY script3.py /home/app/script3.py
 ENV PEBBLE_DEBUG 1
 ENTRYPOINT ["/usr/bin/pebble", "run"]

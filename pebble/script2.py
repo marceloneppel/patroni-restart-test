@@ -1,10 +1,9 @@
-import http.server
-import socketserver
+import os
+import subprocess
 
-PORT = 8081
+pid = os.fork()
 
-Handler = http.server.SimpleHTTPRequestHandler
-
-with socketserver.TCPServer(("", PORT), Handler) as httpd:
-    print("serving at port", PORT)
-    httpd.serve_forever()
+# Pid equal to 0 represents the created child process.
+if pid == 0:
+    os.setsid()
+    subprocess.Popen(["/usr/bin/python3", "/home/app/script3.py"])
